@@ -1,9 +1,9 @@
-all: words.txt histogram.tsv
+all:  histogram.tsv
 
 
 clean:
-	rm -f words.txt
-	rm -f histogram.tsv
+	rm -f words.txt histogram.tsv
+
 
 words.txt:	/usr/share/dict/words
 				cp $< $@
