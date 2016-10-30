@@ -20,4 +20,4 @@ histogram.png: histogram.tsv
 	rm Rplots.pdf	
 
 report.html: report.rmd histogram.tsv histogram.png				
-	Rscript -e 'Sys.setenv("RSTUDIO_PANDOC" = "/Applications/RStudio.app/Contents/MacOS/pandoc"); rmarkdown::render("$<")'
+	Rscript -e 'Sys.setenv("RSTUDIO_PANDOC" = "/Applications/RStudio.app/Contents/MacOS/pandoc"); rmarkdown::render("$<",clean = FALSE)'
