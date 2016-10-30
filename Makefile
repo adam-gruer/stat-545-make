@@ -6,7 +6,7 @@ all:  report.html
 
 
 clean:
-	rm -f words.txt histogram.tsv histogram.png report.html
+	rm -f words.txt histogram.tsv histogram.png report.html report.knit.md Rplots.pdf 
 
 
 words.txt:	/usr/share/dict/words
@@ -21,3 +21,4 @@ histogram.png: histogram.tsv
 
 report.html: report.rmd histogram.tsv histogram.png				
 	Rscript -e 'Sys.setenv("RSTUDIO_PANDOC" = "/Applications/RStudio.app/Contents/MacOS/pandoc"); rmarkdown::render("$<",clean = FALSE)'
+	rm report.knit.md
